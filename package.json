@@ -16,6 +16,7 @@
     "commit": "cz"
   },
   "dependencies": {
+    "eslint-config-standard": "^17.0.0",
     "next": "^12.3.0",
     "next-seo": "^5.5.0",
     "react": "^18.2.0",
