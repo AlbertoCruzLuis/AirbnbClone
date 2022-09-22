@@ -13,9 +13,9 @@ export interface INavbarProps {
   containerStyle?: string;
 }
 
-export const NavbarComponent: FC<INavbarProps> = ({
+const NavbarComponent: FC<INavbarProps> = ({
   routes,
-  containerStyle = "flex flex-wrap overflow-hidden max-h-[24px] gap-8",
+  containerStyle = "flex flex-wrap overflow-hidden max-h-[32px] gap-8",
   ...rest
 }) => {
   const router = useRouter();
