@@ -1,5 +1,5 @@
-import { Meta } from '@/layouts/Meta';
-import { PageLayout } from '@/layouts/PageLayout';
+import { Meta } from "@/layouts/Meta";
+import { PageLayout } from "@/layouts/PageLayout";
 
 const Index = () => {
   return (
