@@ -1,3 +1,4 @@
+import classnames from "classnames";
 import type { FC, ReactNode } from "react";
 import { memo } from "react";
 
@@ -17,13 +18,18 @@ export const NavItemComponent: FC<NavItemProps> = ({
   url,
   icon,
   isActive,
-  activeStyle = "border-b-2",
-  disableStyle = "",
+  activeStyle = "border-black",
+  disableStyle = "border-transparent",
 }) => {
-  const divStyle = isActive
-    ? `${activeStyle} border-solid border-white`
-    : `${disableStyle}`;
-  const linkStyle = isActive ? "text-white" : "text-gray-400";
+  const divStyle = classnames("border-b-2 border-solid hover:border-gray-400", {
+    [activeStyle]: isActive,
+    [disableStyle]: !isActive,
+  });
+
+  const linkStyle = classnames({
+    "font-semibold text-black": isActive,
+    "text-black": !isActive,
+  });
 
   return (
     <div className={divStyle}>
