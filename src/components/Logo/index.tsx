@@ -7,22 +7,26 @@ const LogoComponent = () => {
   const isMobile = width < 1200;
 
   return (
-    <div className={`font-poppins flex items-center gap-1 tracking-wide`}>
+    <div className={`flex items-center`}>
       {isMobile && (
-        <Image
-          src="/assets/images/Isotipo.svg"
-          alt="Isotipo"
-          width={102}
-          height={32}
-        />
+        <div className="w-8">
+          <Image
+            src="/assets/images/Isotipo.svg"
+            alt="Isotipo"
+            width={32}
+            height={32}
+          />
+        </div>
       )}
       {!isMobile && (
-        <Image
-          src="/assets/images/Imagotipo.svg"
-          alt="Imagotipo"
-          width={102}
-          height={32}
-        />
+        <div className="w-[102px]">
+          <Image
+            src="/assets/images/Imagotipo.svg"
+            alt="Imagotipo"
+            width={102}
+            height={32}
+          />
+        </div>
       )}
     </div>
   );

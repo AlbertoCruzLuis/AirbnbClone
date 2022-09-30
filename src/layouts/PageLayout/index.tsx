@@ -4,15 +4,20 @@ import { Header } from "@/components/Header";
 import { FooterSection } from "@/features/Footer/content/FooterSection";
 
 type IPageLayoutProps = {
-  meta: ReactNode;
-  children: ReactNode;
+  meta?: ReactNode;
+  children?: ReactNode;
 };
 
 export const PageLayout = (props: IPageLayoutProps) => (
   <div>
     {props.meta}
     <Header />
-    <main className="flex min-h-screen flex-col">{props.children}</main>
+    <main
+      role="main"
+      className="mx-auto flex min-h-screen flex-col xl:container"
+    >
+      {props.children}
+    </main>
     <FooterSection />
   </div>
 );

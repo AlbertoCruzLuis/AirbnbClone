@@ -26,7 +26,7 @@ const NavbarComponent: FC<INavbarProps> = ({
   };
 
   return (
-    <nav className={`${containerStyle}`}>
+    <nav aria-label="Main" className={`${containerStyle}`}>
       {routes &&
         routes.map(({ name, url, icon }, index) => (
           <NavItem

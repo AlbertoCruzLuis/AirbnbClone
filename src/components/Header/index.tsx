@@ -1,5 +1,8 @@
 import dynamic from "next/dynamic";
+import { useRouter } from "next/router";
 import { memo } from "react";
+
+import { SearchBarSmallSection } from "@/features/SearchBar/content/SearchBarSmallSection";
 
 import { CustomLink } from "../CustomLink";
 import type { INavbarProps } from "../Navbar";
@@ -14,7 +17,7 @@ const Logo = dynamic(
   { ssr: false }
 );
 
-const routes = [
+export const routes = [
   {
     name: "Conviertete en anfitrion",
     url: "/host/",
@@ -34,13 +37,19 @@ const routes = [
 ];
 
 const HeaderComponent = () => {
+  const { pathname } = useRouter();
+
+  const isSearchPage = pathname.includes("/s/");
   return (
-    <header className="px-8 py-4">
+    <header role="banner" className="px-8 py-4">
       <div className="mx-auto flex items-center justify-between xl:container">
-        <CustomLink className="pr-5" href="/">
-          <Logo />
-        </CustomLink>
-        <div className="pl-5 xs:hidden">
+        <div className="flex gap-4">
+          <CustomLink className="flex items-center pr-5" href="/">
+            <Logo />
+          </CustomLink>
+          {isSearchPage && <SearchBarSmallSection />}
+        </div>
+        <div className="pl-5 sm:hidden md:hidden lg:hidden xs:hidden">
           <Navbar routes={routes} />
         </div>
       </div>

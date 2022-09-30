@@ -1,4 +1,4 @@
-import { Hero } from "@/components/Hero";
+import { ApartamentListSection } from "@/features/Apartament/content/ApartamentListSection";
 import { Meta } from "@/layouts/Meta";
 import { PageLayout } from "@/layouts/PageLayout";
 
@@ -12,7 +12,7 @@ const Index = () => {
         />
       }
     >
-      <Hero />
+      <ApartamentListSection />
     </PageLayout>
   );
 };

@@ -4,5 +4,6 @@ export const useRouter = () => {
     route: "/",
     push: jest.fn(),
     query: {},
+    pathname: "",
   };
 };
