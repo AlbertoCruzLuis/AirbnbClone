@@ -11,7 +11,10 @@ import { LanguageSwitcher } from "../../components/LanguageSwitcher";
 
 export const FooterSection = () => {
   return (
-    <footer className="border-t border-solid border-gray-300 ">
+    <footer
+      role="contentinfo"
+      className="border-t border-solid border-gray-300 "
+    >
       <div className="mx-auto flex flex-col gap-8 px-6 py-12 xl:container">
         <div className="grid grid-cols-4 gap-32 md:gap-16 xs:grid-cols-1">
           <div className="flex flex-col gap-4">
