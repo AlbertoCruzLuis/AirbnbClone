@@ -1,7 +1,8 @@
 import Image from "next/image";
-import { HiStar } from "react-icons/hi";
 
 import { CustomLink } from "@/components/CustomLink";
+
+import { Rating } from "./Rating";
 
 interface IApartamentCardProps {
   imageUrl: string;
@@ -9,6 +10,7 @@ interface IApartamentCardProps {
   country: string;
   province: string;
   rating: number;
+  url?: string;
 }
 
 export const ApartamentCard = ({
@@ -17,9 +19,10 @@ export const ApartamentCard = ({
   country,
   province,
   rating,
+  url = "/",
 }: IApartamentCardProps) => {
   return (
-    <CustomLink className="flex flex-col gap-2" href="/">
+    <CustomLink className="flex flex-col gap-2" href={url}>
       <Image
         className="rounded-xl"
         src={imageUrl}
@@ -31,11 +34,7 @@ export const ApartamentCard = ({
       <div className="flex flex-col gap-2">
         <div className="flex justify-between gap-2">
           <span className="font-bold">{`${province}, ${country}`}</span>
-          <div className="flex items-center gap-1">
-            <HiStar />
-            {rating && <span>{rating}</span>}
-            {!rating && <span>New</span>}
-          </div>
+          <Rating rating={rating} />
         </div>
         <div className="flex gap-1">
           <span className="font-bold">$ {price}</span>
