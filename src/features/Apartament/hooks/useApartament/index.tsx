@@ -19,7 +19,7 @@ export interface IApartament {
 }
 
 export const useApartament = (filters: Filters = {}) => {
-  const { data: apartaments } = useQuery(
+  const { data: apartaments, isLoading: isApartamentLoading } = useQuery(
     ["apartaments"],
     async () => {
       const apartamentsRaw = await fetch("/api/apartaments");
@@ -33,5 +33,6 @@ export const useApartament = (filters: Filters = {}) => {
 
   return {
     apartaments,
+    isApartamentLoading,
   };
 };
