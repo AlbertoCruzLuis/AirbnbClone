@@ -1,7 +1,8 @@
 import type { ReactNode } from "react";
 
 import { Header } from "@/components/Header";
-import { FooterSection } from "@/features/Footer/content/FooterSection";
+import { FeatureFlagManagement } from "@/features/FeatureFlagManagement";
+import { Footer } from "@/features/Footer";
 
 type IPageLayoutProps = {
   meta?: ReactNode;
@@ -18,6 +19,7 @@ export const PageLayout = (props: IPageLayoutProps) => (
     >
       {props.children}
     </main>
-    <FooterSection />
+    <Footer />
+    <FeatureFlagManagement />
   </div>
 );
