@@ -31,6 +31,7 @@
     "react-loading-skeleton": "^3.1.0",
     "react-redux": "^8.0.4",
     "react-responsive-carousel": "^3.2.23",
+    "react-switch": "^7.0.0",
     "react-use": "^17.4.0",
     "reactjs-popup": "^2.0.5"
   },
