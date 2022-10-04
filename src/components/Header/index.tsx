@@ -1,60 +1,13 @@
-import dynamic from "next/dynamic";
-import { useRouter } from "next/router";
-import { memo } from "react";
+import { FeatureRender } from "@/features/FeatureFlag/components/FeatureRender";
 
-import { SearchBarSmallSection } from "@/features/SearchBar/content/SearchBarSmallSection";
+import { HeaderV1 } from "./content/HeaderV1";
+import { HeaderV2 } from "./content/HeaderV2";
 
-import { CustomLink } from "../CustomLink";
-import type { INavbarProps } from "../Navbar";
-
-const Navbar = dynamic<INavbarProps>(
-  () => import("@/components/Navbar").then((mod) => mod.Navbar),
-  { ssr: false }
-);
-
-const Logo = dynamic(
-  () => import("@/components/Logo").then((mod) => mod.Logo),
-  { ssr: false }
-);
-
-export const routes = [
-  {
-    name: "Conviertete en anfitrion",
-    url: "/host/",
-  },
-  {
-    name: "Ayuda",
-    url: "/help/",
-  },
-  {
-    name: "Registrate",
-    url: "/signup/",
-  },
-  {
-    name: "Inicia sesion",
-    url: "/login/",
-  },
-];
-
-const HeaderComponent = () => {
-  const { pathname } = useRouter();
-
-  const isSearchPage = pathname.includes("/s/");
-  return (
-    <header role="banner" className="px-8 py-4">
-      <div className="mx-auto flex items-center justify-between xl:container">
-        <div className="flex gap-4">
-          <CustomLink className="flex items-center pr-5" href="/">
-            <Logo />
-          </CustomLink>
-          {isSearchPage && <SearchBarSmallSection />}
-        </div>
-        <div className="pl-5 sm:hidden md:hidden lg:hidden xs:hidden">
-          <Navbar routes={routes} />
-        </div>
-      </div>
-    </header>
-  );
+const headerVersions = {
+  HEADER_V1: <HeaderV1 />,
+  HEADER_V2: <HeaderV2 />,
 };
 
-export const Header = memo(HeaderComponent);
+export const Header = () => {
+  return <FeatureRender versions={headerVersions} />;
+};
