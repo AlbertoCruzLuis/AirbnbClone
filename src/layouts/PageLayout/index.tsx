@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 
 import { Header } from "@/components/Header";
+import { Category } from "@/features/Category";
 import { FeatureFlagManagement } from "@/features/FeatureFlagManagement";
 import { Footer } from "@/features/Footer";
 
@@ -13,6 +14,7 @@ export const PageLayout = (props: IPageLayoutProps) => (
   <div>
     {props.meta}
     <Header />
+    <Category />
     <main
       role="main"
       className="mx-auto flex min-h-screen flex-col xl:container"

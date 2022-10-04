@@ -1,8 +1,16 @@
+import { useRouter } from "next/router";
+
 import { ApartamentListSection } from "@/features/Apartament/content/ApartamentListSection";
 import { Meta } from "@/layouts/Meta";
 import { PageLayout } from "@/layouts/PageLayout";
 
 const Index = () => {
+  const { query } = useRouter();
+
+  const filters = {
+    category: query.category as string,
+  };
+
   return (
     <PageLayout
       meta={
@@ -12,7 +20,7 @@ const Index = () => {
         />
       }
     >
-      <ApartamentListSection />
+      <ApartamentListSection filters={filters} />
     </PageLayout>
   );
 };
