@@ -16,7 +16,7 @@ export const ApartamentListSection: FC<IApartamentListSectionProps> = ({
   const { apartaments, isApartamentLoading } = useApartament(filters);
 
   const gridStyle =
-    "grid gap-8 p-8 grid-cols-auto-fit sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 xl:p-0 xl:pt-8 xs:grid-cols-1 ";
+    "grid gap-8 p-8 grid-cols-auto-fit sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 xl:p-0 xl:py-8 xs:grid-cols-1 ";
 
   if (isApartamentLoading) {
     return (
