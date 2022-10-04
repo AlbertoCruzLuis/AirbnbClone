@@ -12,6 +12,7 @@ export interface Filters {
   country?: string;
   province?: string;
   rating?: number;
+  category?: string;
 }
 
 const filterApartamentByPrice = (
@@ -73,6 +74,13 @@ const filterApartamentByRating = (
   return apartaments.filter((apartament) => apartament.rating === rating);
 };
 
+const filterApartamentByCategory = (
+  apartaments: IApartament[],
+  category: string
+) => {
+  return apartaments.filter((apartament) => apartament.category === category);
+};
+
 export const getFilteredApartaments = (
   apartaments: IApartament[],
   filters: Filters
@@ -132,6 +140,13 @@ export const getFilteredApartaments = (
     filteredApartaments = filterApartamentByRating(
       filteredApartaments,
       filters.rating
+    );
+  }
+
+  if (filters.category) {
+    filteredApartaments = filterApartamentByCategory(
+      filteredApartaments,
+      filters.category
     );
   }
 
