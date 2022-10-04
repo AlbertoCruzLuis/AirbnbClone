@@ -16,6 +16,7 @@ export interface IApartament {
   country: string;
   province: string;
   rating: number;
+  category?: string;
 }
 
 export const useApartament = (filters: Filters = {}) => {
