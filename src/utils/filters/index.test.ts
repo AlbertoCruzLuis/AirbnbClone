@@ -16,6 +16,7 @@ const apartaments: IApartament[] = [
     country: "Spain",
     province: "Barcelona",
     rating: 4,
+    category: "Playas",
   },
   {
     id: "2",
@@ -30,6 +31,7 @@ const apartaments: IApartament[] = [
     country: "Spain",
     province: "Madrid",
     rating: 3,
+    category: "Piscinas increibles",
   },
 ];
 
@@ -44,6 +46,7 @@ describe("getFilteredApartaments util", () => {
       country: "Spain",
       province: "Barcelona",
       rating: 4,
+      category: "Playas",
     };
 
     const filteredApartaments = getFilteredApartaments(apartaments, filters);
@@ -61,6 +64,7 @@ describe("getFilteredApartaments util", () => {
       country: "Spain",
       province: "Madrid",
       rating: 3,
+      category: "Piscinas increibles",
     };
 
     const filteredApartaments = getFilteredApartaments(apartaments, filters);
