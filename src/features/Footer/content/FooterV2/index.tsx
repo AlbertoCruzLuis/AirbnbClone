@@ -26,7 +26,7 @@ export const FooterV2 = () => {
   return (
     <footer
       role="contentinfo"
-      className="fixed bottom-0 z-10 flex w-full justify-between border-t border-solid bg-white p-4 sm:hidden md:hidden xs:hidden"
+      className="sticky bottom-0 z-10 flex w-full justify-between border-t border-solid bg-white p-4 sm:hidden md:hidden xs:hidden"
     >
       <div className="flex items-center gap-2">
         <span className="text-sm">{year} Airbnb, Inc.</span>
