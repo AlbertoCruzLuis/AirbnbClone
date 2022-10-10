@@ -2,11 +2,16 @@ import { fireEvent, screen } from "@testing-library/react";
 
 import { customRender } from "@/utils/testUtils";
 
+import { SearchProvider } from "../../providers/SearchProvider";
 import { SearchBarSection } from ".";
 
 describe("SearchBarSection component", () => {
   it("should change color of day when user click", async () => {
-    customRender(<SearchBarSection />);
+    customRender(
+      <SearchProvider>
+        <SearchBarSection />
+      </SearchProvider>
+    );
 
     fireEvent.click(screen.getByTitle("DateRangePicker"));
 
@@ -28,7 +33,11 @@ describe("SearchBarSection component", () => {
   });
 
   it("should change color of day when user hover", async () => {
-    customRender(<SearchBarSection />);
+    customRender(
+      <SearchProvider>
+        <SearchBarSection />
+      </SearchProvider>
+    );
 
     fireEvent.click(screen.getByTitle("DateRangePicker"));
 
@@ -51,7 +60,11 @@ describe("SearchBarSection component", () => {
   });
 
   it("not should change color of day when user do hover and endDate is selected", async () => {
-    customRender(<SearchBarSection />);
+    customRender(
+      <SearchProvider>
+        <SearchBarSection />
+      </SearchProvider>
+    );
 
     fireEvent.click(screen.getByTitle("DateRangePicker"));
 
@@ -77,7 +90,11 @@ describe("SearchBarSection component", () => {
   });
 
   it("should clear dates when user click in clearDates button", async () => {
-    customRender(<SearchBarSection />);
+    customRender(
+      <SearchProvider>
+        <SearchBarSection />
+      </SearchProvider>
+    );
 
     fireEvent.click(screen.getByTitle("DateRangePicker"));
 
@@ -99,7 +116,11 @@ describe("SearchBarSection component", () => {
   });
 
   it("should increment value of quantity of Adults when user click in increment button", async () => {
-    customRender(<SearchBarSection />);
+    customRender(
+      <SearchProvider>
+        <SearchBarSection />
+      </SearchProvider>
+    );
 
     fireEvent.click(screen.getByTitle("dropdownHost"));
 
@@ -114,7 +135,11 @@ describe("SearchBarSection component", () => {
   });
 
   it("should decrement value of quantity of Children when user click in decrement button", async () => {
-    customRender(<SearchBarSection />);
+    customRender(
+      <SearchProvider>
+        <SearchBarSection />
+      </SearchProvider>
+    );
 
     fireEvent.click(screen.getByTitle("dropdownHost"));
 
@@ -139,7 +164,11 @@ describe("SearchBarSection component", () => {
   });
 
   it("should show name of place when user write in inputSearch", async () => {
-    customRender(<SearchBarSection />);
+    customRender(
+      <SearchProvider>
+        <SearchBarSection />
+      </SearchProvider>
+    );
 
     const inputSearch: HTMLInputElement = screen.getByLabelText("input-search");
 

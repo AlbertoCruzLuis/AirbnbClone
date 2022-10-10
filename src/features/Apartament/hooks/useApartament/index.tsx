@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 
-import type { Filters } from "@/utils/filters";
-import { getFilteredApartaments } from "@/utils/filters";
+import type { ApartamentFilters } from "../../utils/filters";
+import { getFilteredApartaments } from "../../utils/filters";
 
 export interface IApartament {
   id: string;
@@ -16,10 +16,13 @@ export interface IApartament {
   country: string;
   province: string;
   rating: number;
+  guests: number;
   category?: string;
+  checkIn?: string;
+  checkOut?: string;
 }
 
-export const useApartament = (filters: Filters = {}) => {
+export const useApartament = (filters: ApartamentFilters = {}) => {
   const { data: apartaments, isLoading: isApartamentLoading } = useQuery(
     ["apartaments"],
     async () => {

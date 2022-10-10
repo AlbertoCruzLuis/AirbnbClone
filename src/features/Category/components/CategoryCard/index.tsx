@@ -15,7 +15,7 @@ export const CategoryCard = ({
   isSelected = false,
 }: ICategoryProps) => {
   const buttonStyle = classNames(
-    "pb-2 border-b-2 border-solid",
+    "py-3 mt-1 border-b-2 border-solid",
     { "border-black": isSelected },
     { "border-transparent hover:border-gray-200": !isSelected }
   );

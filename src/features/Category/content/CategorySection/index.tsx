@@ -19,18 +19,16 @@ const CategorySectionComponent = () => {
   }
 
   return (
-    <div className="sticky top-[calc(75px-16px)] z-10 pt-4 shadow-md ">
-      <div className="mx-auto flex gap-8 overflow-hidden bg-white px-8 pt-4 xl:container xl:px-0">
-        {categories?.map((category) => (
-          <CategoryCard
-            key={category.name}
-            name={category.name}
-            imageUrl={category.imageUrl}
-            isSelected={selectedCategory === category.name}
-            handleClick={() => changeCategory(category.name)}
-          />
-        ))}
-      </div>
+    <div className="flex gap-8 overflow-hidden">
+      {categories?.map((category) => (
+        <CategoryCard
+          key={category.name}
+          name={category.name}
+          imageUrl={category.imageUrl}
+          isSelected={selectedCategory === category.name}
+          handleClick={() => changeCategory(category.name)}
+        />
+      ))}
     </div>
   );
 };
