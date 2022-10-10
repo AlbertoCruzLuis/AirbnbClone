@@ -9,7 +9,7 @@
 > Airbnb Clone
 
 <a href="https://airbnbclonetbd.vercel.app" target="_blank">
-    <img alt="DefiBank: Landing" src="public/assets/images/LandingPage.png" />
+    <img alt="Airbnb Clone: Landing Page" src="public/assets/images/LandingPageV2.png" />
 </a>
 
 ### ✨ [Demo](https://airbnbclonetbd.vercel.app)
@@ -31,6 +31,14 @@ npm run start
 ```sh
 npm run test
 ```
+
+## Tech
+- React
+- Next.js
+- Tailwind CSS
+- React Query
+- Airtable
+- Framer Motion
 
 ## Author
 
