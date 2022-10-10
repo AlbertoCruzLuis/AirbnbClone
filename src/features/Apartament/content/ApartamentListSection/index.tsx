@@ -4,10 +4,11 @@ import { ApartamentCard } from "@/features/Apartament/components/ApartamentCard"
 import { ApartamentCardSkeleton } from "@/features/Apartament/components/ApartamentCard/Skeleton";
 import type { IApartament } from "@/features/Apartament/hooks/useApartament";
 import { useApartament } from "@/features/Apartament/hooks/useApartament";
-import type { Filters } from "@/utils/filters";
+
+import type { ApartamentFilters } from "../../utils/filters";
 
 type IApartamentListSectionProps = {
-  filters?: Filters;
+  filters?: ApartamentFilters;
 };
 
 export const ApartamentListSection: FC<IApartamentListSectionProps> = ({

@@ -1,4 +1,4 @@
-import { SearchBarSection } from "@/features/SearchBar/content/SearchBarSection";
+import { SearchBar } from "@/features/SearchBar";
 
 import { CustomLink } from "../CustomLink";
 
@@ -17,7 +17,7 @@ export const Hero = () => {
           </span>
         </div>
       </h1>
-      <SearchBarSection />
+      <SearchBar />
     </div>
   );
 };

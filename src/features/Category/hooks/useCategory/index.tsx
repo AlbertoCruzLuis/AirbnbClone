@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
-import { useRouter } from "next/router";
-import { useMemo } from "react";
+
+import { useQueryParams } from "@/hooks/useQueryParams";
 
 import { categoriesJson } from "../../constants/categories";
 
@@ -10,7 +10,7 @@ export interface ICategory {
 }
 
 export const useCategory = () => {
-  const router = useRouter();
+  const { query, setQuery, router } = useQueryParams();
   const { data: categories, isLoading: isCategoryLoading } = useQuery(
     ["categories"],
     async () => {
@@ -23,23 +23,18 @@ export const useCategory = () => {
   );
 
   const changeCategory = (name: string) => {
-    router.query.category = name;
-
-    router.push(router);
+    setQuery({ ...query, category: name });
   };
 
   const getSelectedCategory = () => {
-    const categorySelected = router.query.category as string;
-    return categorySelected;
+    return query.category;
   };
-
-  const selectedCategory = useMemo(() => getSelectedCategory(), [router]);
 
   return {
     categories,
     isCategoryLoading,
     changeCategory,
-    selectedCategory,
+    selectedCategory: getSelectedCategory(),
     router,
   };
 };

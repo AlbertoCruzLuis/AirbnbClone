@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { memo } from "react";
 
 import { CustomLink } from "@/components/CustomLink";
 
@@ -13,7 +14,7 @@ interface IApartamentCardProps {
   url?: string;
 }
 
-export const ApartamentCard = ({
+const ApartamentCardComponent = ({
   imageUrl,
   price,
   country,
@@ -44,3 +45,5 @@ export const ApartamentCard = ({
     </CustomLink>
   );
 };
+
+export const ApartamentCard = memo(ApartamentCardComponent);

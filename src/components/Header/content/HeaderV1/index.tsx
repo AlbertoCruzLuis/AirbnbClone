@@ -2,7 +2,7 @@ import dynamic from "next/dynamic";
 import { useRouter } from "next/router";
 import { memo } from "react";
 
-import { SearchBarSmallSection } from "@/features/SearchBar/content/SearchBarSmallSection";
+import { SearchBar } from "@/features/SearchBar";
 
 import { CustomLink } from "../../../CustomLink";
 import type { INavbarProps } from "../../../Navbar";
@@ -47,7 +47,7 @@ const HeaderComponent = () => {
           <CustomLink className="flex items-center pr-5" href="/">
             <Logo />
           </CustomLink>
-          {isSearchPage && <SearchBarSmallSection />}
+          {isSearchPage && <SearchBar />}
         </div>
         <div className="pl-5 sm:hidden md:hidden lg:hidden xs:hidden">
           <Navbar routes={routes} />

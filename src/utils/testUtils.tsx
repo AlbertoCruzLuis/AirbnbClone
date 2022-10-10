@@ -7,6 +7,9 @@ export const customRender = (ui: React.ReactElement, options?: any) => {
   return render(ui, { wrapper: Providers, ...options });
 };
 
-export const customRenderHook = <T,>(hook: () => T) => {
-  return renderHook(hook, { wrapper: Providers });
+export const customRenderHook = <T,>(
+  hook: () => T,
+  options = { wrapper: Providers }
+) => {
+  return renderHook(hook, { wrapper: options.wrapper });
 };

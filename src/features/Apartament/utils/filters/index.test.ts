@@ -17,6 +17,7 @@ const apartaments: IApartament[] = [
     province: "Barcelona",
     rating: 4,
     category: "Playas",
+    guests: 2,
   },
   {
     id: "2",
@@ -32,14 +33,16 @@ const apartaments: IApartament[] = [
     province: "Madrid",
     rating: 3,
     category: "Piscinas increibles",
+    guests: 4,
   },
 ];
 
 describe("getFilteredApartaments util", () => {
   it("should return first apartament", () => {
     const filters = {
-      price: { min: 0, max: 100 },
-      accommodationType: "Entire place",
+      minPrice: 0,
+      maxPrice: 100,
+      accommodationType: ["Entire place"],
       bedrooms: 1,
       beds: 1,
       bathrooms: 1,
@@ -56,8 +59,9 @@ describe("getFilteredApartaments util", () => {
 
   it("should return second apartament", () => {
     const filters = {
-      price: { min: 0, max: 100 },
-      accommodationType: "Entire place",
+      minPrice: 0,
+      maxPrice: 100,
+      accommodationType: ["Entire place"],
       bedrooms: 1,
       beds: 3,
       bathrooms: 1,
